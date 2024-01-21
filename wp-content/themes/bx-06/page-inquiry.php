@@ -1,7 +1,40 @@
 <?php get_header();?>
-<div class="o-center o-box o-box--transparent u-bg-qua u-pb-2xl">
-  <h1 class="c-heading u-text-weight-b"><?php the_title();?></h1>
-  <p class="c-content-l">必要な情報を入力して、「送信する」ボタンを押してください。</p>
+<div class="c-puton c-puton--filter js-pull-view">
+  <picture class="o-frame o-frame--switch-l">
+    <source type="image/avif"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.avif" />
+    <source type="image/webp"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.webp" />
+    <img
+      src="<?php echo get_template_directory_uri();?>/img/hero.png"
+      width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+  </picture>
+  <div class="c-puton__inner o-cover">
+    <h1 class="c-hero-copy o-cover__middle">
+      <span class="c-display-l u-text-weight-b u-font-en-con">INQUIRY</span>
+      <span class="c-display-xs"><?php the_title();?></span>
+    </h1>
+  </div>
+</div>
+<div class="o-switcher o-switcher--no-gap js-pull-view">
+  <div class="o-cover u-bg-qua">
+    <div class="o-cover__middle c-inner-box">
+      <p class="c-display-2xs u-text-center">必要な情報を入力して、「送信する」ボタンを押してください。</p>
+    </div>
+  </div>
+  <div>
+    <picture class="o-frame">
+      <source type="image/avif"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img05.avif" />
+      <source type="image/webp"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img05.webp" />
+      <img
+        src="<?php echo get_template_directory_uri();?>/img/dummy-img05.jpg"
+        width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+    </picture>
+  </div>
+</div>
+<div class="o-center o-box o-box--transparent u-bg-primary u-pt-2xl u-pb-2xl js-pull-view">
   <?php if (have_posts()):?>
   <?php while (have_posts()): the_post();?>
   <?php the_content();?>

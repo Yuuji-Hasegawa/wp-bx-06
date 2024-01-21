@@ -3,73 +3,127 @@
  if(!is_front_page()) {
      echo get_breadcrumb();
  }?>
-<div class="o-box o-box--transparent o-center u-bg-primary u-pt-2xl u-pb-2xl">
-  <h2 class="o-stack o-stack--s u-text-center u-mb-m">
-    <span class="c-display-m u-text-weight-b">お問い合わせ</span>
-    <span class="c-content-l u-text-weight-m">ご相談・ご質問は、こちらからお気軽にお問い合わせください。</span>
-  </h2>
-  <div class="o-stack o-stack--s u-text-center u-mb-m">
-    <a href="#" class="o-icon-parent o-icon-parent--text-center c-tel-link c-display-l" target="_blank" rel="noopener">
-      <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-        <path
-          d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"
-          fill="currentColor"></path>
-      </svg>
-      <span
-        class="u-font-en-con u-text-weight-b"><?php echo get_vars('company', 'tel');?></span>
-    </a>
-    <span
-      class="c-suppl-l">営業時間&nbsp;<?php echo get_vars('company', 'workday');?>
-      <span
-        class="u-font-en-con"><?php echo get_vars('company', 'open');?>~<?php echo get_vars('company', 'close');?></span></span>
+<div class="o-sidebar o-sidebar--no-gap js-pull-view">
+  <div class="o-sidebar__half-item">
+    <div class="o-sidebar o-sidebar--no-gap">
+      <div class="o-sidebar__half-item">
+        <div class="c-puton c-puton--filter">
+          <picture class="o-frame o-frame--square">
+            <source type="image/avif"
+              srcset="<?php echo get_template_directory_uri();?>/img/dummy-img01.avif" />
+            <source type="image/webp"
+              srcset="<?php echo get_template_directory_uri();?>/img/dummy-img01.webp" />
+            <img
+              src="<?php echo get_template_directory_uri();?>/img/dummy-img01.jpg"
+              width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+          </picture>
+          <div class="c-puton__inner o-cover c-inner-box u-text-white">
+            <div class="o-stack o-stack--l">
+              <h2 class="c-display-s u-font-en-con u-text-weight-b">COMPANY</h2>
+              <p class="c-content-l">あのイーハトーヴォのすきとおった風</p>
+            </div>
+            <a href="<?php echo home_url('/company/');?>"
+              class="o-box o-box--button o-box--rect-button u-bg-qua u-font-en-con u-full-width u-flex-center u-block-bottom">
+              MORE
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="o-sidebar__half-item">
+        <div class="c-puton c-puton--filter">
+          <picture class="o-frame o-frame--square">
+            <source type="image/avif"
+              srcset="<?php echo get_template_directory_uri();?>/img/dummy-img04.avif" />
+            <source type="image/webp"
+              srcset="<?php echo get_template_directory_uri();?>/img/dummy-img04.webp" />
+            <img
+              src="<?php echo get_template_directory_uri();?>/img/dummy-img04.jpg"
+              width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+          </picture>
+          <div class="c-puton__inner o-cover c-inner-box u-text-white">
+            <div class="o-stack o-stack--l">
+              <h2 class="c-display-s u-font-en-con u-text-weight-b">FAQ</h2>
+              <p class="c-content-l">あのイーハトーヴォのすきとおった風</p>
+            </div>
+            <a href="<?php echo home_url('/faq/');?>"
+              class="o-box o-box--button o-box--rect-button u-bg-qua u-font-en-con u-full-width u-flex-center u-block-bottom">
+              MORE
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="u-text-center">
+  <div class="o-sidebar__half-item u-bg-invert o-cover c-inner-box">
+    <div class="o-stack o-stack--l">
+      <h2 class="o-icon-parent o-icon-parent--center">
+        <span class="c-display-s u-font-en-con u-text-weight-b">INQUIRY</span>
+        <span class="c-display-2xs u-text-weight-b">お問い合わせ</span>
+      </h2>
+      <p class="c-content-l">ご相談・ご質問は、こちらからお気軽にお問い合わせください。</p>
+    </div>
+    <div class="o-cover__middle">
+      <div class="o-stack o-stack--s u-text-center">
+        <a href="#" class="o-icon-parent o-icon-parent--text-center c-tel-link c-display-l" target="_blank"
+          rel="noopener">
+          <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z"
+              fill="currentColor"></path>
+          </svg>
+          <span
+            class="u-font-en-con u-text-weight-b"><?php echo get_vars('company', 'tel');?></span>
+        </a>
+        <span
+          class="c-suppl-l">営業時間&nbsp;<?php echo get_vars('company', 'workday');?>&nbsp;<span
+            class="u-font-en-con"><?php echo get_vars('company', 'open');?>~<?php echo get_vars('company', 'close');?></span></span>
+      </div>
+    </div>
     <a href="<?php echo home_url('/inquiry/');?>"
-      class="o-box o-box--button o-box--rect-button o-icon-parent">
-      <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-        <path
-          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-          fill="currentColor" />
-      </svg>
-      メールでお問い合わせ
-    </a>
+      class="o-box o-box--button o-box--rect-button u-font-en-con u-full-width u-flex-center"> MORE </a>
   </div>
 </div>
-<footer class="o-center c-footer u-pt-2xl u-pb-2xl">
-  <div class="o-sidebar u-mb-m">
-    <div class="o-stack o-stack--m o-sidebar__footLeft">
-      <ul class="o-cluster">
-        <li><a class="c-gnav-link c-content-l u-text-weight-b"
-            href="<?php echo home_url('/');?>">トップ</a>
-        </li>
-        <li><a class="c-gnav-link c-content-l u-text-weight-b"
-            href="<?php echo home_url('/company/');?>">会社情報</a>
-        </li>
-        <li><a class="c-gnav-link c-content-l u-text-weight-b"
-            href="<?php echo home_url('/blog/');?>">ブログ</a>
-        </li>
-        <li><a class="c-gnav-link c-content-l u-text-weight-b"
-            href="<?php echo home_url('/news/');?>">お知らせ</a>
-        </li>
-        <li><a class="c-gnav-link c-content-l u-text-weight-b"
-            href="<?php echo home_url('/inquiry/');?>">お問い合わせ</a>
-        </li>
-      </ul>
-      <ul class="o-cluster">
-        <li><a class="c-gnav-link c-content-m"
-            href="<?php echo home_url('/terms/');?>">サイト規約</a>
-        </li>
-        <li><a class="c-gnav-link c-content-m"
-            href="<?php echo home_url('/privacy-policy/');?>">プライバシーポリシー</a>
-        </li>
-      </ul>
-    </div>
-    <div class="o-sidebar__footRight">
-      <h3 class="c-display-xs u-text-weight-b u-font-en-con">Follow Us</h3>
-      <div class="o-cluster">
-        <a class="c-text-link c-display-m"
+<footer class="c-footer">
+  <div class="o-center u-bg-primary u-pt-m u-pb-m">
+    <ul class="o-cluster o-cluster--gap-s">
+      <li><a class="c-ft-link c-content-m u-text-weight-b"
+          href="<?php echo home_url('/company/');?>">会社情報</a>
+      </li>
+      <li><a class="c-ft-link c-content-m u-text-weight-b"
+          href="<?php echo home_url('/terms/');?>">サイト規約</a>
+      </li>
+      <li><a class="c-ft-link c-content-m u-text-weight-b"
+          href="<?php echo home_url('/privacy-policy/');?>">プライバシーポリシー</a>
+      </li>
+    </ul>
+  </div>
+  <div class="o-center u-bg-qua u-pt-l u-pb-l">
+    <div class="o-cluster o-cluster--middle">
+      <a href="<?php echo home_url('/');?>"
+        class="o-icon-parent o-icon-parent--center o-icon-parent--gap-s c-logo-link u-pt-xs">
+        <svg class="o-icon c-display-s" width="670" height="403" viewBox="0 0 670 403" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M586.221 268.039L502.504 402.075L418.733 268.039H586.221Z" fill="#69AEE0"></path>
+          <path d="M334.996 402.075L418.744 268.029L502.492 402.075H334.996Z" fill="#70B1E1"></path>
+          <path d="M418.723 268.039L334.996 402.075L251.246 268.039H418.723Z" fill="#92CAEF"></path>
+          <path d="M167.497 402.075L251.245 268.029L334.993 402.075H167.497Z" fill="#92CAEF"></path>
+          <path d="M0 402.075L83.7487 268.039L167.497 402.085L0 402.075Z" fill="#7EBAE6"></path>
+          <path d="M670 134.035L586.252 268.039L502.491 134.035H670Z" fill="#85C1EB"></path>
+          <path d="M418.743 268.039L502.481 134.035L586.218 268.039H418.743Z" fill="#7EBAE6"></path>
+          <path d="M502.492 134.035L418.744 268.039L334.996 134.035H502.492Z" fill="#7BB8E5"></path>
+          <path d="M251.246 268.039L334.996 134.035L418.723 268.039H251.246Z" fill="#85C1EB"></path>
+          <path d="M334.993 134.035L251.245 268.039L167.497 134.035H334.993Z" fill="#73B2E2"></path>
+          <path d="M83.749 268.039L167.498 134.035L251.225 268.039H83.749Z" fill="#67A0D3"></path>
+          <path d="M502.491 134.035L586.231 0L669.989 134.045L502.491 134.035Z" fill="#99D2F3"></path>
+          <path d="M334.996 134.035L418.744 0L502.492 134.045L334.996 134.035Z" fill="#82BEE9"></path>
+          <path d="M167.497 134.035L251.245 0L334.993 134.045L167.497 134.035Z" fill="#73B2E2"></path>
+          <path d="M251.225 0L167.498 134.035L83.749 0H251.225Z" fill="#65A5DA"></path>
+        </svg>
+        <span class="c-display-xs u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
+      </a>
+      <div class="o-cluster o-cluster--gap-s">
+        <a class="c-text-link c-display-s"
           href="<?php echo get_vars('sns', 'fb');?>"
           target="_blank" rel="noopener" aria-label="Goto Facebook">
           <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -79,7 +133,7 @@
               fill="currentColor"></path>
           </svg>
         </a>
-        <a class="c-text-link c-display-m"
+        <a class="c-text-link c-display-s"
           href="<?php echo get_vars('sns', 'tw');?>"
           target="_blank" rel="noopener" aria-label="Goto Twitter">
           <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -89,7 +143,7 @@
               fill="currentColor" />
           </svg>
         </a>
-        <a class="c-text-link c-display-m"
+        <a class="c-text-link c-display-s"
           href="<?php echo get_vars('sns', 'instagram');?>"
           target="_blank" rel="noopener" aria-label="Goto Instagram">
           <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -100,37 +154,11 @@
           </svg>
         </a>
       </div>
+      <p class="c-suppl-m u-font-en-con u-text-center u-block-right">
+        <?php echo get_vars('site', 'copyright');?>
+      </p>
     </div>
   </div>
-  <div class="o-stack o-stack--s u-mb-l">
-    <a href="<?php echo home_url('/');?>"
-      class="o-icon-parent o-icon-parent--center o-icon-parent--footer-logo u-max-item">
-      <svg class="o-icon" width="670" height="403" viewBox="0 0 670 403" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M586.221 268.039L502.504 402.075L418.733 268.039H586.221Z" fill="#69AEE0"></path>
-        <path d="M334.996 402.075L418.744 268.029L502.492 402.075H334.996Z" fill="#70B1E1"></path>
-        <path d="M418.723 268.039L334.996 402.075L251.246 268.039H418.723Z" fill="#92CAEF"></path>
-        <path d="M167.497 402.075L251.245 268.029L334.993 402.075H167.497Z" fill="#92CAEF"></path>
-        <path d="M0 402.075L83.7487 268.039L167.497 402.085L0 402.075Z" fill="#7EBAE6"></path>
-        <path d="M670 134.035L586.252 268.039L502.491 134.035H670Z" fill="#85C1EB"></path>
-        <path d="M418.743 268.039L502.481 134.035L586.218 268.039H418.743Z" fill="#7EBAE6"></path>
-        <path d="M502.492 134.035L418.744 268.039L334.996 134.035H502.492Z" fill="#7BB8E5"></path>
-        <path d="M251.246 268.039L334.996 134.035L418.723 268.039H251.246Z" fill="#85C1EB"></path>
-        <path d="M334.993 134.035L251.245 268.039L167.497 134.035H334.993Z" fill="#73B2E2"></path>
-        <path d="M83.749 268.039L167.498 134.035L251.225 268.039H83.749Z" fill="#67A0D3"></path>
-        <path d="M502.491 134.035L586.231 0L669.989 134.045L502.491 134.035Z" fill="#99D2F3"></path>
-        <path d="M334.996 134.035L418.744 0L502.492 134.045L334.996 134.035Z" fill="#82BEE9"></path>
-        <path d="M167.497 134.035L251.245 0L334.993 134.045L167.497 134.035Z" fill="#73B2E2"></path>
-        <path d="M251.225 0L167.498 134.035L83.749 0H251.225Z" fill="#65A5DA"></path>
-      </svg>
-      <span class="c-logo-label c-logo-label--footer u-font-logo u-flex-shrink-none">BLUE B NOSE</span>
-    </a>
-    <span class="c-suppl-l u-text-secondary">〒<span
-        class="u-font-en-con"><?php echo get_vars('company', 'zip');?></span>
-      <?php echo get_vars('company', 'address');?></span>
-  </div>
-  <p class="c-suppl-m u-font-en-con u-text-center">
-    <?php echo get_vars('site', 'copyright');?>
-  </p>
 </footer>
 <?php wp_footer();?>
 </body>

@@ -1,6 +1,22 @@
 <?php get_header();?>
-<div class="o-box o-box--transparent o-center u-bg-qua u-pb-2xl">
-  <h1 class="c-heading u-text-weight-b"><?php the_title();?></h1>
+<div class="c-puton c-puton--filter js-pull-view">
+  <picture class="o-frame o-frame--switch-l">
+    <source type="image/avif"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.avif" />
+    <source type="image/webp"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.webp" />
+    <img
+      src="<?php echo get_template_directory_uri();?>/img/hero.png"
+      width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+  </picture>
+  <div class="c-puton__inner o-cover">
+    <h1 class="c-hero-copy o-cover__middle">
+      <span class="c-display-l u-text-weight-b u-font-en-con">Privacy Policy</span>
+      <span class="c-display-xs"><?php the_title();?></span>
+    </h1>
+  </div>
+</div>
+<div class="o-box o-box--transparent o-center u-bg-qua u-pt-2xl u-pb-2xl">
   <p class="c-content-l">
     <?php echo get_vars('term', 'company');?>（以下「当社」といいます。）は、当社の提供するサービス（以下「本サービス」といいます。）における、ユーザーについての個人情報を含む利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。
   </p>

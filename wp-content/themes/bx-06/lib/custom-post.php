@@ -36,7 +36,33 @@ function create_post_type()
           'supports' => array('title','editor')
         )
     );
+    register_post_type(
+        'works',
+        array(
+      'labels' => array(
+          'name' => '導入事例',
+          'singular_name' => '導入事例',
+          'add_new_item' => '導入事例の新規追加',
+          'edit_item' => '導入事例の編集'
+      ),
+      'has_archive' => true,
+      'public' => true,
+      'show_ui' => true,
+      'menu_position' => 14,
+      'supports' => array('title','thumbnail'),
+      'menu_icon'   => 'dashicons-format-gallery',
+      )
+    );
 }
+function my_redirect_404()
+{
+    if (is_singular('works')) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header(404);
+    }
+}
+add_action('template_redirect', 'my_redirect_404');
 function custom_post_type_link($link, $post)
 {
     if ($post->post_type === 'news') {

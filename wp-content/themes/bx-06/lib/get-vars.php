@@ -51,16 +51,36 @@ function get_thumb()
     $output .= '</picture>';
     return $output;
 }
+function get_thumb_sq()
+{
+    $output = '<picture class="o-frame o-frame--square">';
+    if (has_post_thumbnail()) {
+        $output .= '<img src="' . get_the_post_thumbnail_url($post->ID, 'full') . '"  width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt=""/>';
+    } else {
+        $output .= '
+      <source srcset="' . get_template_directory_uri() . '/img/thumb.avif" type="image/avif" />
+      <source srcset="' . get_template_directory_uri() . '/img/thumb.webp" type="image/webp" />
+      <img src="' . get_template_directory_uri() . '/img/thumb.png" width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />';
+    }
+    $output .= '</picture>';
+    return $output;
+}
 function get_author_id()
 {
     global $post;
-    if(!is_404()) {
-        $author_id = $post->post_author;
-        if($author_id === '0') {
-            $author_id = '1';
-        }
+    $author_id = '';
+    if(is_404()) {
+        $author_id = 0;
     } else {
-        $author_id = '0';
+        if($post->post_author) {
+            if($author_id === '0') {
+                $author_id = '1';
+            } else {
+                $author_id = $post->post_author;
+            }
+        } else {
+            $author_id = 0;
+        }
     }
     return $author_id;
 }

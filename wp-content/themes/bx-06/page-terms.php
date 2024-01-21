@@ -1,6 +1,22 @@
 <?php get_header();?>
-<div class="o-box o-box--transparent o-center u-pb-2xl u-bg-qua">
-  <h1 class="c-heading u-text-weight-b"><?php the_title();?></h1>
+<div class="c-puton c-puton--filter js-pull-view">
+  <picture class="o-frame o-frame--switch-l">
+    <source type="image/avif"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.avif" />
+    <source type="image/webp"
+      srcset="<?php echo get_template_directory_uri();?>/img/hero.webp" />
+    <img
+      src="<?php echo get_template_directory_uri();?>/img/hero.png"
+      width="100%" height="100%" decoding="async" fetchpriority="high" alt="" />
+  </picture>
+  <div class="c-puton__inner o-cover">
+    <h1 class="c-hero-copy o-cover__middle">
+      <span class="c-display-l u-text-weight-b u-font-en-con">TERM OF USE</span>
+      <span class="c-display-xs"><?php the_title();?></span>
+    </h1>
+  </div>
+</div>
+<div class="o-box o-box--transparent o-center u-pb-2xl u-pt-2xl u-bg-qua">
   <p class="c-content-l">
     本サイト規約（以下「本規約」と言います。）には、本サイトの利用条件及び当社とユーザーの皆様との間の権利義務関係が定められています。<br />本サイトの利用に際しては、本規約の全文をお読みいただいたうえで、本規約に同意いただく必要があります。
   </p>

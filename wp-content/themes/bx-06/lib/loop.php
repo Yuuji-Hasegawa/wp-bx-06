@@ -24,18 +24,10 @@ function get_front_news()
         }
         $output .= '</ul>';
         wp_reset_postdata();
-        $output .= '<div class="u-text-right">
-        <a class="o-icon-parent c-content-l c-text-link u-text-weight-b"
+        $output .= '<a class="o-box o-box--button o-box--rect-button u-font-en-con u-full-width u-flex-center"
           href="' . home_url('/news/') . '">
-          一覧を見る
-          <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
-            <path
-              d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
-              fill="currentColor"></path>
-          </svg>
-        </a>
-      </div>';
+          MORE
+        </a>';
     }
     if ($output) {
         return $output;
@@ -78,8 +70,8 @@ function get_related_loop()
     );
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) {
-        $output = '<h2 class="c-sec-heading u-text-weight-b">関連記事</h2>
-        <ul class="o-grid o-grid--tri">';
+        $output = '<h2 class="c-sec-heading u-text-weight-b js-pull-view">関連記事</h2>
+        <ul class="o-grid o-grid--tri js-pull-view">';
         while ($the_query->have_posts()) {
             $the_query->the_post();
             $output .= '<li>
@@ -120,8 +112,8 @@ function get_last_loop()
     );
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) {
-        $output = '<h2 class="c-sec-heading u-text-weight-b">最新記事</h2>
-        <ul class="o-grid o-grid--tri">';
+        $output = '<h2 class="c-sec-heading u-text-weight-b js-pull-view">最新記事</h2>
+        <ul class="o-grid o-grid--tri js-pull-view">';
         while ($the_query->have_posts()) {
             $the_query->the_post();
             $output .= '<li>
@@ -163,8 +155,8 @@ function get_popular_loop()
     );
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) {
-        $output = '<h2 class="c-sec-heading u-text-weight-b">人気記事</h2>
-        <ul class="o-grid o-grid--quart">';
+        $output = '<h2 class="c-sec-heading u-text-weight-b js-pull-view">人気記事</h2>
+        <ul class="o-grid o-grid--quart js-pull-view">';
         while ($the_query->have_posts()) {
             $the_query->the_post();
             $output .= '<li>

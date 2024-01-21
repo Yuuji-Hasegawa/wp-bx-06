@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div class="c-puton c-puton--filter">
+<div class="c-puton c-puton--filter js-pull-view">
   <picture class="o-frame o-frame--switch-l">
     <source type="image/avif"
       srcset="<?php echo get_template_directory_uri();?>/img/hero.avif" />
@@ -16,14 +16,86 @@
     </h1>
   </div>
 </div>
-<div class="o-box o-box--transparent u-bg-qua u-pb-2xl">
-  <div class="o-center o-center--content">
-    <h2 class="c-sec-heading u-text-center u-text-weight-b u-font-en">Information</h2>
-    <?php echo get_front_news();?>
+<div class="o-sidebar o-sidebar--no-gap js-pull-view">
+  <div class="o-sidebar__wide">
+    <picture class="o-frame">
+      <source type="image/avif"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img01.avif" />
+      <source type="image/webp"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img01.webp" />
+      <img
+        src="<?php echo get_template_directory_uri();?>/img/dummy-img01.jpg"
+        width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+    </picture>
+  </div>
+  <div class="o-sidebar__narrow o-cover u-bg-primary">
+    <div class="o-cover__middle c-inner-box">
+      <h2 class="c-display-m u-mb-l u-text-weight-b u-font-en-con">NEWS</h2>
+      <?php echo get_front_news();?>
+    </div>
   </div>
 </div>
-<div class="o-center u-pb-2xl">
-  <h2 class="c-sec-heading u-text-center u-text-weight-b u-font-en">What's New</h2>
+<div class="o-sidebar o-sidebar--no-gap js-pull-view">
+  <div class="o-sidebar__narrow o-cover u-bg-invert">
+    <div class="o-cover__middle c-inner-box">
+      <h2 class="c-display-m u-mb-l u-text-weight-b u-font-en-con">PRODUCTS SERVICES</h2>
+      <p class="c-content-l">
+        あのイーハトーヴォのすきとおった風、<br class="u-pc-only" />夏でも底に冷たさをもつ青いそら、うつくしい森で飾られた
+      </p>
+      <a href="<?php echo home_url('/product/');?>"
+        class="o-box o-box--button o-box--rect-button u-font-en-con u-full-width u-flex-center">
+        MORE
+      </a>
+    </div>
+  </div>
+  <div class="o-sidebar__wide">
+    <picture class="o-frame">
+      <source type="image/avif"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img02.avif" />
+      <source type="image/webp"
+        srcset="<?php echo get_template_directory_uri();?>/img/dummy-img02.webp" />
+      <img
+        src="<?php echo get_template_directory_uri();?>/img/dummy-img02.jpg"
+        width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+    </picture>
+  </div>
+</div>
+<div class="o-center u-pt-2xl u-pb-2xl u-bg-qua js-pull-view">
+  <div class="o-switcher">
+    <div class="o-stack o-stack--l">
+      <h2 class="c-display-m u-text-weight-b u-font-en-con">WORKS</h2>
+      <h3 class="c-display-m u-text-weight-b">ダミーテキスト</h3>
+      <p class="c-content-l">
+        あのイーハトーヴォのすきとおった風、<br class="u-pc-only" />
+        夏でも底に冷たさをもつ青いそら、うつくしい森で飾られた
+      </p>
+      <a href="<?php echo home_url('/works/');?>"
+        class="o-box o-box--button o-box--rect-button o-box--primary-button u-font-en-con u-full-width u-flex-center">
+        MORE
+      </a>
+    </div>
+    <div>
+      <picture class="o-frame">
+        <source type="image/avif"
+          srcset="<?php echo get_template_directory_uri();?>/img/dummy-img03.avif" />
+        <source type="image/webp"
+          srcset="<?php echo get_template_directory_uri();?>/img/dummy-img03.webp" />
+        <img
+          src="<?php echo get_template_directory_uri();?>/img/dummy-img03.jpg"
+          width="100%" height="100%" loading="lazy" decoding="async" fetchpriority="low" alt="" />
+      </picture>
+    </div>
+  </div>
+</div>
+<a href="<?php echo home_url('/warranty/');?>"
+  class="o-box o-box--button o-box--primary-button c-warranty-btn u-pt-m u-pb-m u-pl-m u-pr-m u-text-center u-full-width js-pull-view">
+  <span class="o-icon-parent o-icon-parent--center">
+    <span class="u-font-en-con c-display-m u-text-weight-b">WARRANTY</span>
+    <span class="c-display-xs u-text-weight-b">保証について</span>
+  </span>
+</a>
+<div class="o-center u-pb-2xl js-pull-view">
+  <h2 class="c-sec-heading u-text-center u-text-weight-b u-font-en-con">What's New</h2>
   <?php if (have_posts()):?>
   <ul class="o-grid o-grid--tri u-mb-xl">
     <?php while (have_posts()): the_post();?>
@@ -55,13 +127,7 @@
   <div class="u-text-center">
     <a class="o-box o-box--button o-box--rect-button o-box--primary-button o-icon-parent"
       href="<?php echo home_url('/blog/');?>">
-      コンテンツ一覧
-      <svg class="o-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
-        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.-->
-        <path
-          d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
-          fill="currentColor"></path>
-      </svg>
+      MORE
     </a>
   </div>
 </div>
